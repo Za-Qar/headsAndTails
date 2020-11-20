@@ -1,26 +1,18 @@
-// Player
-
-// State:
-// isTurn, choice
-
-// Behaviour:
-// choose
-
 class Player {
-  constructor(isTurn, choice) {
-    this.isTurn = isTurn;
+  constructor(choice) {
     this.choice = choice;
   }
 
+  //lets the player choose heads or tails
   choose() {
     var prompt = window.prompt('heads or tails?');
 
     if (prompt === 'heads') {
-      return (this.choice = 'heads');
-    } else if (prompt === 'tails') {
-      return (this.choice = 'tails');
+      this.choice = 'heads';
+      console.log(this.choice);
     } else {
-      alert('please refresh and write heads or tails');
+      this.choice = 'tails';
+      console.log(this.choice);
     }
   }
 }
