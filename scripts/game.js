@@ -14,18 +14,20 @@
 
 class Game {
   constructor(score, player, computerPlayer, coin) {
-    this.score = score;
+    this.score = 0;
     this.player = player;
     this.computerPlayer = computerPlayer;
     this.coin = coin;
   }
 
   addScore() {
-    console.log(this.score++);
+    this.score++;
+    console.log('the score is: ', this.score);
   }
 
   minusScore() {
-    console.log(this.score--);
+    this.score--;
+    console.log('the score is: ', this.score);
   }
 
   changeTurn() {
@@ -34,17 +36,35 @@ class Game {
   }
 
   play() {
-    let player = new Player();
-    let computerPlayer = new Player();
-    let coin = new Coin();
+    console.log(player.choose());
 
-    // console.log(player.choose());
+    console.log(coin.flip());
+
+    this.checkWinner();
+
+    this.changeTurn();
 
     // if (coin.flip() === player.choice) {
     // }
     console.log(player, computerPlayer, coin);
+
+    if (confirm('Play again?')) {
+      this.play();
+    }
+  }
+
+  checkWinner() {
+    if (player.choice === coin.side) {
+      this.addScore();
+      console.log('The human won');
+    } else {
+      this.minusScore();
+      console.log('The robots are taking over');
+    }
   }
 }
-
+let player = new Player(true);
+let computerPlayer = new Player(false);
+let coin = new Coin();
 let game = new Game();
 game.play();

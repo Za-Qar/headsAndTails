@@ -13,14 +13,14 @@ class Player {
   }
 
   choose() {
-    let prompt = prompt("heads or tails?");
+    var prompt = window.prompt('heads or tails?');
 
-    if (prompt === "heads") {
-      this.choice = "heads";
-    } else if (prompt === "tails") {
-      this.choice = "tails";
+    if (prompt === 'heads') {
+      return (this.choice = 'heads');
+    } else if (prompt === 'tails') {
+      return (this.choice = 'tails');
     } else {
-      alert("please refresh and write heads or tails");
+      alert('please refresh and write heads or tails');
     }
   }
 }
