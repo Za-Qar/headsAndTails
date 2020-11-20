@@ -14,6 +14,7 @@ class Player {
 
   choose() {
     let prompt = prompt("heads or tails?");
+
     if (prompt === "heads") {
       this.choice = "heads";
     } else if (prompt === "tails") {

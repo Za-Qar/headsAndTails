@@ -23,5 +23,5 @@ class Coin {
   }
 }
 
-let ourCoin = new Coin("heads");
-console.log(ourCoin.flip());
+// let ourCoin = new Coin("heads");
+// console.log(ourCoin.flip());
